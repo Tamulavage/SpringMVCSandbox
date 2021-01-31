@@ -1,6 +1,5 @@
 package com.sandbox.demo.controller;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.sandbox.demo.services.DemoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,8 +38,8 @@ public class DemoController {
     }
     
     @PostMapping("/convert")
-    public ResponseEntity<Object> convertDemo(@RequestBody JSONPObject o){
+    public ResponseEntity<Object> convertDemo(@RequestBody String mockJSON){
         log.info("convertDemo initiated");
-        return new ResponseEntity<>(demoService.convertJSONObject(o), HttpStatus.OK);
+        return new ResponseEntity<>(demoService.convertJSONObject(mockJSON), HttpStatus.OK);
     }
 }
